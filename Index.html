@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lyna 💙</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6693F5, #8fb1ff);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: white;
+      color: #6693F5;
+    }
+
+    .no {
+      background: #ff6b6b;
+      color: white;
+      position: relative;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FIRST SCREEN -->
+  <div class="card" id="question">
+    <h1>Lyna 💙</h1>
+
+    <!-- Cute GIF at the beginning -->
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGFvZ2Y3ZzRsbDZ3d2l6Z2RzNmR1cDVwZ2Z6eXg4aHZnNHZ1NXU5eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0MYyDa8S9ghzNebm/giphy.gif" alt="cute gif">
+
+    <p>Can you be my Valentine? 💘</p>
+
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Yes 💙</button>
+      <button class="no" onmouseover="moveNo()">No 😅</button>
+    </div>
+  </div>
+
+  <!-- YES SCREEN -->
+  <div class="card hidden" id="yesScreen">
+    <h1>I knew it 😍💙</h1>
+
+    <p>
+      
+       really lucky to have you 💕
+    </p>
+
+    <!-- Cute GIF at the end -->
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3ZpOWY0ZXA5bXl1ZXBzZG13MndzbzR4ZzF0dHR6bHk5M2RydGQzdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26BRv0ThflsHCqDrG/giphy.gif" alt="love gif">
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById('question').classList.add('hidden');
+      document.getElementById('yesScreen').classList.remove('hidden');
+    }
+
+    function moveNo() {
+      const btn = document.querySelector('.no');
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
